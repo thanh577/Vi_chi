@@ -1,0 +1,28 @@
+[package]
+name = "vi-chi"
+version = "1.0.0"
+description = "Ứng dụng quản lý chi tiêu cá nhân Vi Chi"
+authors = ["Thanhnv"]
+license = "MIT"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["default"] }
+tauri-plugin-sql = { version = "2", features = ["sqlite"] }
+tauri-plugin-fs = { version = "2" }
+tauri-plugin-dialog = { version = "2" }
+tauri-plugin-opener = { version = "2" }
+tauri-plugin-shell = { version = "2" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+thiserror = "1.0"
+rusqlite = { version = "0.32", features = ["bundled", "chrono", "serde_json"] }
+
+[[bin]]
+name = "quan_ly_chi_tieu"
+path = "src/main.rs"
