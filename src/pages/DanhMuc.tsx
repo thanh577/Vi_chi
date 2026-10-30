@@ -1,17 +1,12 @@
 // Vi Chi - Trang Danh mục
 
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Tag, Trash2, Edit, Eye } from 'lucide-react';
+import { Plus, Tag, Trash2, Edit, Eye, X } from 'lucide-react';
 import { useThongBao } from '../hooks/useToast';
 import { layDanhMuc, themDanhMuc, capNhatDanhMuc, xoaDanhMuc, khoiTaoDanhMucMacDinh } from '../services/danhMuc';
 import type { DanhMuc, YeuCauDanhMuc, LoaiGiaoDich } from '../types';
 import { HopThoaiXacNhan } from '../components/HopThoaiXacNhan';
-
-const BIEU_TUONG_MAC_DINH = [
-  'utensils', 'car', 'home', 'zap', 'shopping-bag', 'heart-pulse',
-  'graduation-cap', 'gamepad2', 'file-text', 'users', 'plane', 'more-horizontal',
-  'briefcase', 'gift', 'clock', 'store', 'trending-up', 'plus-circle',
-];
+import { BieuTuongDanhMuc, DANH_SACH_BIEU_TUONG } from '../components/BieuTuongDanhMuc';
 
 const MAU_SAC_MAC_DINH = [
   '#ef4444', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#3b82f6',
@@ -30,7 +25,7 @@ export function DanhMuc() {
   const [formData, setFormData] = useState<YeuCauDanhMuc>({
     ten: '',
     loai: 'expense',
-    bieu_tuong: BIEU_TUONG_MAC_DINH[0],
+    bieu_tuong: DANH_SACH_BIEU_TUONG[0].key,
     mau_sac: MAU_SAC_MAC_DINH[0],
   });
   const [loiForm, setLoiForm] = useState<string | null>(null);
@@ -64,7 +59,7 @@ export function DanhMuc() {
     setFormData({
       ten: '',
       loai: tab,
-      bieu_tuong: BIEU_TUONG_MAC_DINH[0],
+      bieu_tuong: DANH_SACH_BIEU_TUONG[0].key,
       mau_sac: MAU_SAC_MAC_DINH[0],
     });
     setLoiForm(null);
@@ -216,7 +211,7 @@ export function DanhMuc() {
                       color: dm.mau_sac,
                     }}
                   >
-                    {dm.bieu_tuong}
+                    <BieuTuongDanhMuc bieuTuong={dm.bieu_tuong} size={20} />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontWeight: 'var(--font-medium)', color: 'var(--text-primary)' }}>
@@ -288,7 +283,7 @@ export function DanhMuc() {
           <div className="modal" style={{ maxWidth: '480px' }}>
             <div className="modal-header">
               <h3 className="modal-title">{dangChinhSua ? 'Chỉnh sửa danh mục' : 'Thêm danh mục'}</h3>
-              <button className="modal-close" onClick={handleDongForm}><Plus size={20} /></button>
+              <button className="modal-close" onClick={handleDongForm} aria-label="Đóng"><X size={20} /></button>
             </div>
             <div className="modal-body">
               {loiForm && <div style={{ color: 'var(--color-danger)', marginBottom: 'var(--space-3)', padding: 'var(--space-2)', backgroundColor: 'var(--color-danger-light)', borderRadius: 'var(--radius-md)' }}>{loiForm}</div>}
@@ -321,24 +316,17 @@ export function DanhMuc() {
 
               <div className="input-wrapper">
                 <label className="input-label">Biểu tượng <span style={{ color: 'var(--color-danger)' }}>*</span></label>
-                <input
-                  type="text"
-                  className="input"
-                  placeholder="Tên biểu tượng (ví dụ: utensils)"
-                  value={formData.bieu_tuong}
-                  onChange={(e) => setFormData((p) => ({ ...p, bieu_tuong: e.target.value }))}
-                  maxLength={50}
-                />
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)', marginTop: 'var(--space-2)' }}>
-                  {BIEU_TUONG_MAC_DINH.map((icon) => (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
+                  {DANH_SACH_BIEU_TUONG.map(({ key, ten, Icon }) => (
                     <button
-                      key={icon}
+                      key={key}
                       type="button"
-                      className={`btn btn-sm ${formData.bieu_tuong === icon ? 'btn-primary' : 'btn-outline'}`}
-                      onClick={() => setFormData((p) => ({ ...p, bieu_tuong: icon }))}
-                      style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)' }}
+                      title={ten}
+                      className={`btn btn-sm ${formData.bieu_tuong === key ? 'btn-primary' : 'btn-outline'}`}
+                      onClick={() => setFormData((p) => ({ ...p, bieu_tuong: key }))}
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}
                     >
-                      {icon}
+                      <Icon size={16} /> {ten}
                     </button>
                   ))}
                 </div>
