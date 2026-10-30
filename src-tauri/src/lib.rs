@@ -18,13 +18,13 @@ pub enum ViChiError {
   #[error("Lỗi cơ sở dữ liệu: {0}")]
   Database(#[from] rusqlite::Error),
 
-  #[error("Lỗi serde: {0}")]
+  #[error("Lỗi xử lý dữ liệu: {0}")]
   Serde(#[from] serde_json::Error),
 
-  #[error("Lỗi IO: {0}")]
+  #[error("Lỗi đọc/ghi tệp: {0}")]
   Io(#[from] std::io::Error),
 
-  #[error("Lỗi UUID: {0}")]
+  #[error("Lỗi định danh: {0}")]
   Uuid(#[from] uuid::Error),
 
   #[error("Lỗi thời gian: {0}")]
