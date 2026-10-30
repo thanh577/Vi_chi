@@ -21,7 +21,7 @@ fn main() {
     .setup(|app| {
       let handle = app.handle().clone();
       // Chạy migration khi ứng dụng khởi động
-      database::run_migrations(&handle).expect("Không thể chạy migration");
+      database::run_migrations(&handle).expect("Không thể nâng cấp cơ sở dữ liệu");
       // Khởi tạo danh mục mặc định
       danh_muc::khoi_tao_danh_muc_mac_dinh(handle).expect("Không thể khởi tạo danh mục mặc định");
       Ok(())
