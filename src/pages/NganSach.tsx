@@ -1,7 +1,7 @@
 // Vi Chi - Trang Ngân sách
 
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Calendar, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Plus, Calendar, AlertTriangle, CheckCircle, X } from 'lucide-react';
 import { useDinhDang } from '../hooks';
 import { useThongBao } from '../hooks/useToast';
 import { ThanhNganSach } from '../components';
@@ -224,7 +224,7 @@ export function NganSach() {
           <div className="modal" style={{ maxWidth: '480px' }}>
             <div className="modal-header">
               <h3 className="modal-title">{dangChinhSua ? 'Chỉnh sửa ngân sách' : 'Thêm ngân sách'}</h3>
-              <button className="modal-close" onClick={handleDongForm}><Plus size={20} /></button>
+              <button className="modal-close" onClick={handleDongForm} aria-label="Đóng"><X size={20} /></button>
             </div>
             <div className="modal-body">
               {loiForm && <div style={{ color: 'var(--color-danger)', marginBottom: 'var(--space-3)', padding: 'var(--space-2)', backgroundColor: 'var(--color-danger-light)', borderRadius: 'var(--radius-md)' }}>{loiForm}</div>}
