@@ -116,7 +116,7 @@ export function kiemTraLoaiGiaoDich(loai: string): loai is LoaiGiaoDich {
 export function kiemTraMauHex(mau: string): KetQuaKiemTra {
   const regex = /^#[0-9A-Fa-f]{6}$/;
   if (!regex.test(mau)) {
-    return { hopLe: false, loi: 'Màu sắc phải ở định dạng hex (ví dụ: #ef4444)' };
+    return { hopLe: false, loi: 'Màu sắc phải ở định dạng mã màu (ví dụ: #ef4444)' };
   }
   return { hopLe: true };
 }
