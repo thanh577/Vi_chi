@@ -1,6 +1,7 @@
 // Vi Chi - Component Thanh ngân sách
 
 import { useDinhDang } from '../hooks';
+import { BieuTuongDanhMuc } from './BieuTuongDanhMuc';
 import type { NganSachDayDu } from '../types';
 
 interface ThanhNganSachProps {
@@ -35,13 +36,13 @@ export function ThanhNganSach({ nganSach, hienThiChiTiet = true }: ThanhNganSach
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'var(--space-2)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
             <div
-              className="icon-wrapper-sm"
+              className="icon-wrapper icon-wrapper-sm"
               style={{
                 backgroundColor: `${danh_muc.mau_sac}20`,
                 color: danh_muc.mau_sac,
               }}
             >
-              {danh_muc.bieu_tuong}
+              <BieuTuongDanhMuc bieuTuong={danh_muc.bieu_tuong} size={18} />
             </div>
             <div>
               <div style={{ fontWeight: 'var(--font-medium)', color: 'var(--text-primary)' }}>
