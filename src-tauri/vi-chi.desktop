@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Vi Chi
+GenericName=Quản lý chi tiêu cá nhân
+GenericName[vi]=Quản lý chi tiêu cá nhân
+Comment=Ứng dụng quản lý thu chi, ngân sách và báo cáo tài chính cá nhân
+Comment[vi]=Ứng dụng quản lý thu chi, ngân sách và báo cáo tài chính cá nhân
+Exec={{exec}}
+Icon={{icon}}
+Terminal=false
+Categories=Office;Finance;Utility;
+Keywords=chi tiêu;thu chi;ngân sách;tiền;tài chính;
+Keywords[vi]=chi tiêu;thu chi;ngân sách;tiền;tài chính;
+StartupWMClass={{name}}
