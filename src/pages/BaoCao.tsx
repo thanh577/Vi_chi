@@ -85,7 +85,7 @@ export function BaoCao() {
       link.click();
       URL.revokeObjectURL(link.href);
 
-      thongBaoThanhCong('Đã xuất báo cáo CSV');
+      thongBaoThanhCong('Đã xuất báo cáo');
     } catch (error) {
       thongBaoLoi('Không thể xuất báo cáo');
     } finally {
