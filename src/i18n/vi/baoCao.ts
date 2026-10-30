@@ -32,7 +32,7 @@ export const baoCao = {
   bieuDoDuong: 'Biểu đồ đường',
 
   // Category report
-  topChiTieu: 'Top chi tiêu lớn nhất',
+  topChiTieu: 'Các khoản chi lớn nhất',
   xepHangDanhMuc: 'Xếp hạng danh mục',
   phanBoChiTieu: 'Phân bổ chi tiêu',
 
@@ -43,7 +43,6 @@ export const baoCao = {
   khongDoi: 'Không đổi',
 
   // Export
-  xuatCSV: 'Xuất CSV',
   xuatBaoCao: 'Xuất báo cáo',
   dangXuat: 'Đang xuất...',
   xuatThanhCong: 'Đã xuất báo cáo thành công',
