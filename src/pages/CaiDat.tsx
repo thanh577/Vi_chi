@@ -68,7 +68,7 @@ export function CaiDat() {
 
   const handleXuatDuLieu = async () => {
     // This would trigger the export from the BaoCao service
-    thongBaoThongTin('Tính năng xuất dữ liệu', 'Vui lòng sử dụng trang Báo cáo để xuất dữ liệu CSV');
+    thongBaoThongTin('Tính năng xuất dữ liệu', 'Vui lòng sử dụng trang Báo cáo để xuất dữ liệu.');
   };
 
   return (
@@ -135,8 +135,8 @@ export function CaiDat() {
                 <div className="input-wrapper">
                   <label className="input-label">Giao diện</label>
                   <select className="select" defaultValue="light">
-                    <option value="light">Sáng (Light)</option>
-                    <option value="dark">Tối (Dark) - Sắp có</option>
+                    <option value="light">Sáng</option>
+                    <option value="dark">Tối - Sắp có</option>
                   </select>
                   <p className="input-hint">Chế độ tối sẽ được cập nhật sau</p>
                 </div>
@@ -333,11 +333,11 @@ export function CaiDat() {
                 </div>
                 <div>
                   <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>Công nghệ</div>
-                  <div style={{ fontWeight: 'var(--font-semibold)' }}>Tauri 2 + React + TypeScript</div>
+                  <div style={{ fontWeight: 'var(--font-semibold)' }}>Ứng dụng độc lập, không cần internet</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>Cơ sở dữ liệu</div>
-                  <div style={{ fontWeight: 'var(--font-semibold)' }}>SQLite</div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>Nơi lưu dữ liệu</div>
+                  <div style={{ fontWeight: 'var(--font-semibold)' }}>Thư mục trên máy tính của bạn</div>
                 </div>
               </div>
             </div>
@@ -377,23 +377,6 @@ export function CaiDat() {
                     <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>Bạn có toàn quyền kiểm soát dữ liệu của mình</div>
                   </div>
                 </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-header">
-              <h3 className="card-title">Cảm ơn các thư viện mã nguồn mở</h3>
-            </div>
-            <div className="card-content">
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
-                <li>Tauri - Framework ứng dụng desktop</li>
-                <li>React & TypeScript - Giao diện người dùng</li>
-                <li>Vite - Công cụ xây dựng</li>
-                <li>SQLite - Cơ sở dữ liệu</li>
-                <li>Recharts - Biểu đồ</li>
-                <li>Lucide React - Biểu tượng</li>
-                <li>date-fns - Xử lý ngày tháng (nếu dùng)</li>
               </ul>
             </div>
           </div>
