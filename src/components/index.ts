@@ -7,4 +7,5 @@ export * from './BieuDoThuChi';
 export * from './BieuDoDanhMuc';
 export * from './ThanhNganSach';
 export * from './HopThoaiXacNhan';
+export * from './BieuTuongDanhMuc';
 export * from './ThongBao';
