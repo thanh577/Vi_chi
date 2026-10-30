@@ -94,13 +94,13 @@ export function HuongDan() {
       <Muc id="cai-dat" tieuDe="2. Cài đặt và khởi động">
         <DanhSach
           items={[
-            'Cài từ file .deb: sudo apt install ./quan_ly_chi_tieu_1.0.0_amd64.deb',
-            'Chạy từ .AppImage: chmod +x ... && ./quan_ly_chi_tieu_1.0.0_amd64.AppImage',
+            'Cài từ tệp .deb: sudo apt install ./quan_ly_chi_tieu_1.0.0_amd64.deb',
+            'Chạy trực tiếp từ tệp .AppImage: chmod +x ... && ./quan_ly_chi_tieu_1.0.0_amd64.AppImage',
             'Bản phát triển: cd vi-chi && npm install && npm run tauri dev',
           ]}
         />
         <p style={{ marginTop: 'var(--space-3)' }}>
-          Sau khi cài xong, mở ứng dụng từ menu hệ thống (tìm "Vi Chi" hoặc "Quản Lý Chi Tiêu").
+          Sau khi cài xong, mở ứng dụng từ màn hình ứng dụng của hệ thống (tìm "Vi Chi" hoặc "Quản Lý Chi Tiêu").
         </p>
       </Muc>
 
@@ -109,7 +109,7 @@ export function HuongDan() {
           items={[
             'Thanh điều hướng bên trái: Tổng quan, Giao dịch, Ngân sách, Báo cáo, Danh mục, Cài đặt.',
             'Khu vực chính: nội dung của mục đang chọn.',
-            'Header: tên ứng dụng và tháng hiện tại.',
+            'Thanh trên cùng: tên ứng dụng và tháng hiện tại.',
           ]}
         />
       </Muc>
@@ -155,7 +155,7 @@ export function HuongDan() {
           items={[
             'Tổng quan: tổng thu, tổng chi, chênh lệch, tỷ lệ dùng ngân sách trong tháng.',
             'Báo cáo: biểu đồ theo tháng/năm và chi tiêu theo danh mục.',
-            'Có thể xuất báo cáo CSV từ mục Báo cáo.',
+            'Có thể xuất báo cáo từ mục Báo cáo.',
           ]}
         />
       </Muc>
@@ -165,12 +165,12 @@ export function HuongDan() {
           <Download size={18} />
           <strong>Sao lưu:</strong>
         </div>
-        <DanhSach items={['Vào chức năng sao lưu.', 'Nhấn Tạo bản sao lưu.', 'File backup lưu trong thư mục dữ liệu ứng dụng.']} />
+        <DanhSach items={['Vào chức năng sao lưu.', 'Nhấn Tạo bản sao lưu.', 'Tệp sao lưu nằm trong thư mục dữ liệu của ứng dụng.']} />
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', margin: 'var(--space-3) 0 var(--space-2)' }}>
           <Upload size={18} />
           <strong>Khôi phục:</strong>
         </div>
-        <DanhSach items={['Chọn file backup hợp lệ.', 'Nhấn Khôi phục.', 'Dữ liệu hiện tại sẽ được thay thế bằng dữ liệu backup.']} />
+        <DanhSach items={['Chọn tệp sao lưu hợp lệ.', 'Nhấn Khôi phục.', 'Dữ liệu hiện tại sẽ được thay thế bằng dữ liệu sao lưu.']} />
         <p style={{ marginTop: 'var(--space-3)' }}>
           Khuyến nghị: tạo bản sao lưu định kỳ để tránh mất dữ liệu.
         </p>
@@ -180,7 +180,7 @@ export function HuongDan() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)' }}>
           <Keyboard size={18} />
         </div>
-        <DanhSach items={['Ctrl + 1..6: chuyển nhanh giữa các mục chính.', 'Esc: đóng sidebar (trên mobile).']} />
+        <DanhSach items={['Ctrl + 1..6: chuyển nhanh giữa các mục chính.', 'Esc: đóng thanh điều hướng (trên màn hình nhỏ).']} />
       </Muc>
 
       <Muc id="loi" tieuDe="10. Xử lý lỗi thường gặp">
@@ -189,9 +189,9 @@ export function HuongDan() {
         </div>
         <DanhSach
           items={[
-            'Ứng dụng không mở cửa sổ: kiểm tra cài đặt, thử chạy từ terminal để xem lỗi.',
-            'Không tải được dữ liệu: đảm bảo file DB không bị khóa, khởi động lại ứng dụng.',
-            'Lỗi font/tiếng Việt: đảm bảo hệ thống có font tiếng Việt (thường có sẵn trên Ubuntu).',
+            'Ứng dụng không mở cửa sổ: kiểm tra lại cài đặt, thử chạy từ dòng lệnh để xem lỗi.',
+            'Không tải được dữ liệu: đảm bảo tệp dữ liệu không bị khóa, khởi động lại ứng dụng.',
+            'Lỗi hiển thị tiếng Việt: kiểm tra hệ thống đã có phông chữ tiếng Việt (thường có sẵn trên Ubuntu).',
           ]}
         />
       </Muc>
@@ -204,7 +204,7 @@ export function HuongDan() {
           items={[
             'Dữ liệu lưu cục bộ trên máy, không đồng bộ đám mây.',
             'Xóa ứng dụng có thể xóa dữ liệu nếu không sao lưu trước.',
-            'File cơ sở dữ liệu: ~/.local/share/com.thanhnv.vi-chi/vi-chi.db',
+            'Tệp dữ liệu: ~/.local/share/com.thanhnv.vi-chi/vi-chi.db',
           ]}
         />
       </Muc>
