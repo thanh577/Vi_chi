@@ -138,7 +138,7 @@ export function BoDieuHuong({ activeItem, onItemClick }: BoDieuHuongProps) {
           textAlign: 'center',
         }}
       >
-        {!isCollapsed && 'Vi Chi v1.0.0'}
+        {!isCollapsed && 'Vi Chi phiên bản 1.0.0'}
       </div>
     </aside>
   );
