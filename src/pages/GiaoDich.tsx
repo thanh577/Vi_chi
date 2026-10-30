@@ -1,7 +1,7 @@
 // Vi Chi - Trang Giao dịch
 
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Plus, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useThongBao } from '../hooks/useToast';
 import { BangGiaoDich } from '../components';
 import { layGiaoDich, themGiaoDich, capNhatGiaoDich, xoaGiaoDich } from '../services/giaoDich';
@@ -256,7 +256,7 @@ export function GiaoDich() {
           <div className="modal" style={{ maxWidth: '500px' }}>
             <div className="modal-header">
               <h3 className="modal-title">{dangChinhSua ? 'Chỉnh sửa giao dịch' : 'Thêm giao dịch'}</h3>
-              <button className="modal-close" onClick={handleDongForm}><ChevronLeft size={20} /></button>
+              <button className="modal-close" onClick={handleDongForm} aria-label="Đóng"><X size={20} /></button>
             </div>
             <div className="modal-body">
               {loiForm && <div style={{ color: 'var(--color-danger)', marginBottom: 'var(--space-3)', padding: 'var(--space-2)', backgroundColor: 'var(--color-danger-light)', borderRadius: 'var(--radius-md)' }}>{loiForm}</div>}
