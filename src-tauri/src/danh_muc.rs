@@ -247,7 +247,7 @@ fn kiem_tra_du_lieu_danh_muc(yeu_cau: &YeuCauDanhMuc) -> Result<()> {
 
   // Kiểm tra định dạng màu hex
   if !yeu_cau.mau_sac.starts_with('#') || yeu_cau.mau_sac.len() != 7 {
-    return Err(ViChiError::Validation("Màu sắc phải ở định dạng hex (ví dụ: #ef4444)".to_string()));
+    return Err(ViChiError::Validation("Màu sắc phải ở định dạng mã màu (ví dụ: #ef4444)".to_string()));
   }
 
   Ok(())
