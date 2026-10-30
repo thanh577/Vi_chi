@@ -4,6 +4,7 @@ import { useDinhDang } from '../hooks';
 import { Edit, Trash2, MoreHorizontal } from 'lucide-react';
 import type { GiaoDich, DanhMuc, LoaiGiaoDich } from '../types';
 import { HopThoaiXacNhan } from './HopThoaiXacNhan';
+import { BieuTuongDanhMuc } from './BieuTuongDanhMuc';
 import { useState } from 'react';
 
 interface BangGiaoDichProps {
@@ -124,7 +125,7 @@ export function BangGiaoDich({
                             fontSize: 'var(--text-sm)',
                           }}
                         >
-                          {dm.bieu_tuong}
+                          <BieuTuongDanhMuc bieuTuong={dm.bieu_tuong} size={16} />
                         </span>
                       )}
                       <span>{dm?.ten || 'Không xác định'}</span>
